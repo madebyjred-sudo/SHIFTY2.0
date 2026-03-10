@@ -16,27 +16,27 @@ async function startServer() {
       const { prompt, model, agent } = req.body;
 
       // Map frontend model names to OpenRouter model IDs
-      let openRouterModel = "anthropic/claude-sonnet-4.6"; // Default
-      
+      let openRouterModel = "anthropic/claude-sonnet-4-20250514"; // Default
+
       if (model === "Shifty 2.0 by Shift AI") {
-        openRouterModel = "minimax/minimax-m2.5"; // Hidden mapping
+        openRouterModel = "anthropic/claude-sonnet-4-20250514";
       } else if (model === "Claude Sonnet 4.6") {
-        openRouterModel = "anthropic/claude-sonnet-4.6";
+        openRouterModel = "anthropic/claude-sonnet-4-20250514";
       } else if (model === "Gemini 3.1 Flash") {
-        openRouterModel = "google/gemini-3-flash-preview";
+        openRouterModel = "google/gemini-2.0-flash-exp";
       } else if (model === "GPT 5.4") {
-        openRouterModel = "openai/gpt-5.4";
+        openRouterModel = "openai/gpt-4o";
       } else if (model === "Gemini 3.1 Pro") {
-        openRouterModel = "google/gemini-3.1-pro-preview";
+        openRouterModel = "google/gemini-2.5-pro-preview";
       } else if (model === "Claude Opus 4.6") {
-        openRouterModel = "anthropic/claude-opus-4.6";
+        openRouterModel = "anthropic/claude-opus-4-20250514";
       } else if (model === "Moonshot Kimi K2.5") {
         openRouterModel = "moonshotai/kimi-k2.5";
       }
 
       // Map agents to system prompts
       let systemPrompt = "Eres Shifty, el asistente de IA corporativo de Shift. Eres altamente capaz, profesional y directo. Tu objetivo es ayudar a los empleados de la agencia con cualquier tarea general, desde redacción hasta análisis básico. Nunca menciones que eres un modelo de Anthropic, OpenAI o Google. Eres una herramienta propietaria de Shift AI.";
-      
+
       if (agent === "Brand Guardian") {
         systemPrompt = "Eres el guardián estricto del tono y valores de la marca. Tu objetivo es auditar y reescribir el contenido proporcionado para asegurar que cumpla con las guías de estilo corporativas, manteniendo una voz premium, segura y alineada con la misión de la empresa. Nunca permitas lenguaje riesgoso o fuera de marca.";
       } else if (agent === "Campaign Architect") {
