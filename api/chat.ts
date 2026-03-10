@@ -19,20 +19,20 @@ export default async function handler(
         }
 
         // Map frontend model names to OpenRouter model IDs
-        let openRouterModel = 'anthropic/claude-sonnet-4-20250514'; // Default
+        let openRouterModel = 'anthropic/claude-3.7-sonnet'; // Default
 
         if (model === 'Shifty 2.0 by Shift AI') {
-            openRouterModel = 'anthropic/claude-sonnet-4-20250514';
+            openRouterModel = 'anthropic/claude-3.7-sonnet';
         } else if (model === 'Claude Sonnet 4.6') {
-            openRouterModel = 'anthropic/claude-sonnet-4-20250514';
+            openRouterModel = 'anthropic/claude-3.7-sonnet';
         } else if (model === 'Gemini 3.1 Flash') {
-            openRouterModel = 'google/gemini-2.0-flash-exp';
+            openRouterModel = 'google/gemini-2.0-flash-001';
         } else if (model === 'GPT 5.4') {
             openRouterModel = 'openai/gpt-4o';
         } else if (model === 'Gemini 3.1 Pro') {
-            openRouterModel = 'google/gemini-2.5-pro-preview';
+            openRouterModel = 'google/gemini-2.5-flash';
         } else if (model === 'Claude Opus 4.6') {
-            openRouterModel = 'anthropic/claude-opus-4-20250514';
+            openRouterModel = 'anthropic/claude-3-opus';
         } else if (model === 'Moonshot Kimi K2.5') {
             openRouterModel = 'moonshotai/kimi-k2.5';
         }
